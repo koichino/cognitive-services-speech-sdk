@@ -20,12 +20,12 @@ namespace helloworld
             var config = SpeechTranslationConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
 
             // Sets source and target languages.
-            string fromLanguage = "en-US";
+            string fromLanguage = "ja-JP";
             config.SpeechRecognitionLanguage = fromLanguage;
-            config.AddTargetLanguage("de");
+            config.AddTargetLanguage("en");
 
             // Sets voice name of synthesis output.
-            const string GermanVoice = "de-DE-AmalaNeural";
+            const string GermanVoice = "en-US-JennyNeural";
             config.VoiceName = GermanVoice;
             // Creates a translation recognizer using microphone as audio input.
             using (var recognizer = new TranslationRecognizer(config))
