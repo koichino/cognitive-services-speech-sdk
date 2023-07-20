@@ -17,16 +17,16 @@ namespace helloworld
         {
             // Creates an instance of a speech translation config with specified subscription key and service region.
             // Replace with your own subscription key and service region (e.g., "westus").
-            var config = SpeechTranslationConfig.FromSubscription("c37ba677d88f4ea692ee7d42b2461a0b", "japaneast");
+            var config = SpeechTranslationConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
 
             // Sets source and target languages.
-            string fromLanguage = "ja-JP";
+            string fromLanguage = "en-US";
             config.SpeechRecognitionLanguage = fromLanguage;
-            config.AddTargetLanguage("en");
+            config.AddTargetLanguage("de");
 
             // Sets voice name of synthesis output.
-            const string AmericanVoice = "en-US-AriaNeural";
-            config.VoiceName = AmericanVoice;
+            const string GermanVoice = "de-DE-AmalaNeural";
+            config.VoiceName = GermanVoice;
             // Creates a translation recognizer using microphone as audio input.
             using (var recognizer = new TranslationRecognizer(config))
             {
